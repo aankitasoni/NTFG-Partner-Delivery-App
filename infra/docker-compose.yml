@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgis/postgis:15-3.4
+    container_name: ntfg_postgres
+    environment:
+      POSTGRES_USER: ntfg
+      POSTGRES_PASSWORD: ntfg
+      POSTGRES_DB: ntfg
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+
+  redis:
+    image: redis:7-alpine
+    container_name: ntfg_redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+
+volumes:
+  pg_data:
