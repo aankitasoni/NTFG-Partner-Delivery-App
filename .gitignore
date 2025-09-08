@@ -38,22 +38,59 @@ services/ai/.venv/
 # FastAPI/Uvicorn
 *.sqlite
 
-# Flutter
+# Flutter / Dart / Pub
 apps/mobile/build/
 apps/mobile/.dart_tool/
 apps/mobile/.packages
-apps/mobile/ios/Pods/
-apps/mobile/android/.gradle/
-apps/mobile/android/app/build/
 apps/mobile/pubspec.lock
+.dart_tool/
+build/
+pubspec.lock
 
-# OS/Editor
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
 *.swp
 *.swo
+
+# Android
+android/.gradle/
+android/app/build/
+android/local.properties
+
+# iOS
+ios/Pods/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Runner.xcworkspace/
+ios/build/
+
+# Linux
+linux/build/
+linux/flutter/ephemeral/
+
+# macOS
+macos/Flutter/ephemeral/
+macos/build/
+
+# Windows
+windows/build/
+windows/flutter/ephemeral/
+
+# Web
+web/build/
+
+# Firebase / Secrets
+.env
+firebase.json
+firebase_options.dart
 
 # Docker volumes (local data)
 infra/db/data/
 infra/pg_data/
-
-# Misc
-*.iml
